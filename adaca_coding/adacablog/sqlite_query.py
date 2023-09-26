@@ -37,6 +37,12 @@ class SqliteQueryHandler():
             print(x)
             print("\n")
 
+    def get_latest_blog_title(self):
+        self.mycursor.execute("SELECT title FROM blogpost_blogpost ORDER BY publish_date DESC LIMIT 1")
+        for x in self.mycursor:
+            for i in x:
+                print(i)
+                return i
     
 if __name__ == "__main__":
     query = SqliteQueryHandler()
@@ -46,7 +52,12 @@ if __name__ == "__main__":
     """Two users currently registered in the db 'baron_reed' and 'john_doe'.
         We will query only john_doe blogpostings (includes 'title', 'content', 'publish_date')"""
     
-    query.retrieve_post_by_user("john_doe")
+    # query.retrieve_post_by_user("john_doe")
+
+    """Using the Django ORM, write a function that returns the title of the most recent BlogPost."""
+
+    query.get_latest_blog_title()
+    # assert query.get_latest_blog_title() == "Your most recent blog title"
 
 
     

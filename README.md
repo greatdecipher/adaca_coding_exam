@@ -1,7 +1,7 @@
 # ADACA Coding Exam 
 - Please see contents of __adaca_coding__ directory
 - Test questions are in __test_adaca.py__
-- The Django project file is in __adacablog__ directory
+- The Django project file is in __adacablog__ directory, __blogpost__ dir is the app.
 - Django Sqlite Database relative to the Query script path.
   
 # Dedicated script per Question
